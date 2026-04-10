@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            width: 420px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+            font-size: 15px;
+        }
+
+        #save { background: #28a745; }
+        #update { background: #007bff; }
+        #reset { background: #6c757d; }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Project Management Form</h2>
+
+        <form id="projectForm">
+            <label>Project ID</label>
+            <input type="text" id="projectId" onchange="getProject()">
+
+            <label>Project Name</label>
+            <input type="text" id="projectName">
+
+            <label>Assigned To</label>
+            <input type="text" id="assignedTo">
+
+            <label>Assignment Date</label>
+            <input type="date" id="assignmentDate">
+
+            <label>Deadline</label>
+            <input type="date" id="deadline">
+
+            <div class="btn-group">
+                <button type="button" id="save" onclick="saveData()" disabled>Save</button>
+                <button type="button" id="update" onclick="updateData()" disabled>Update</button>
+                <button type="button" id="reset" onclick="resetForm()" disabled>Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://login2explore.com/jpdb/resources/js/0.0.4/jpdb-commons.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
